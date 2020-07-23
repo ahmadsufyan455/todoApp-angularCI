@@ -1,0 +1,17 @@
+<div class="login-form-flex">
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="data.username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [(ngModel)]="data.password">
+    </mat-form-field>
+    <mat-card-actions>
+      <div class="button-flex-container">
+        <button mat-raised-button color="primary" (click)="masuk(data)">Login</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
