@@ -9,14 +9,18 @@ import { FormsModule } from '@angular/forms'
 
 // angular material design
 import { MaterialDesign } from './material/material';
+
+// component
 import { LoginComponent } from './login/login.component';
 import { TodoComponent } from './todo/todo.component';
+import { TambahDataComponent } from './tambah-data/tambah-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TodoComponent
+    TodoComponent,
+    TambahDataComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,9 @@ import { TodoComponent } from './todo/todo.component';
     BrowserAnimationsModule,
     MaterialDesign,
     FormsModule
+  ],
+  entryComponents: [
+    TambahDataComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

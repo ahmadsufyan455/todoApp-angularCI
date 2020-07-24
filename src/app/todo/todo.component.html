@@ -1,1 +1,24 @@
-<p>todo works!</p>
+<div class="container">
+  <button class="btn-tambah" mat-raised-button color="primary" (click)="buatAlamat()">Add Activities</button>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>To Do List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <img matListAvatar src="assets/todo.png" alt="...">
+          <h3 matLine> UAS Tekweb Lanjut </h3>
+          <p matLine>
+            <span> Membuat aplikasi menggunakan angular dan codeigniter 4 yang memuat CRUD </span>
+          </p>
+          <p matLine>
+            <span>Deadline : 28 juli 2020</span>
+          </p>
+          <button class="btn-edit" mat-raised-button color="accent">Edit</button>
+          <button class="btn-selesai" mat-raised-button color="warn">Done</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
