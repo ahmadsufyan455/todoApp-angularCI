@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +7,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  apiUrl: any = 'http://localhost/rest-api/public/todo';
+  apiUrl: string = 'http://localhost/rest-api/public/todo';
 
   baca() {
     return this.http.get(this.apiUrl);
+  }
+
+  simpan(data: any) {
+    console.log(data)
+    return this.http.post(this.apiUrl, data)
   }
 }

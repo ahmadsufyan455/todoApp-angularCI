@@ -14,7 +14,15 @@ export class TambahDataComponent implements OnInit {
     public dialogRef: MatDialogRef<TambahDataComponent>
   ) { }
 
+  data: any = {}
+
   ngOnInit(): void {
+  }
+
+  insert(data: any) {
+    this.api.simpan(data).subscribe(res => {
+      this.dialogRef.close(true)
+    })
   }
 
 }

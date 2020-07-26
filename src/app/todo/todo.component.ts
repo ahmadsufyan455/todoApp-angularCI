@@ -37,7 +37,7 @@ export class TodoComponent implements OnInit {
       width: '450px',
     });
     dialogRef.afterClosed().subscribe(res => {
-      console.log('Dialog ditutup')
+      this.getData // menampilkan data setelah diperbarui
     });
   }
 }
