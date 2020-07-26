@@ -21,10 +21,10 @@ export class TodoComponent implements OnInit {
     this.getData()
   }
 
-  todo: any = []
+  dataTodo: any = []
   getData() {
     this.api.baca().subscribe(res => {
-      this.todo = res
+      this.dataTodo = res
     })
   }
 
@@ -35,6 +35,18 @@ export class TodoComponent implements OnInit {
   buatKegiatan() {
     const dialogRef = this.dialog.open(TambahDataComponent, {
       width: '450px',
+      data: null
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      this.getData // menampilkan data setelah diperbarui
+    });
+  }
+
+  //fungsi untuk menampilkan dialog edit data
+  editTodo(data) {
+    const dialogRef = this.dialog.open(TambahDataComponent, {
+      width: '450px',
+      data: data
     });
     dialogRef.afterClosed().subscribe(res => {
       this.getData // menampilkan data setelah diperbarui

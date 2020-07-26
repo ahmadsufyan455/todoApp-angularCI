@@ -9,20 +9,30 @@ import { ApiService } from '../api.service';
 })
 export class TambahDataComponent implements OnInit {
 
+  data: any = {}
   constructor(
     public api: ApiService,
-    public dialogRef: MatDialogRef<TambahDataComponent>
-  ) { }
-
-  data: any = {}
+    public dialogRef: MatDialogRef<TambahDataComponent>,
+    @Inject(MAT_DIALOG_DATA) public itemData: any
+  ) {
+    if (itemData != null) {
+      this.data = itemData;
+    }
+  }
 
   ngOnInit(): void {
   }
 
   insert(data: any) {
-    this.api.simpan(data).subscribe(res => {
-      this.dialogRef.close(true)
-    })
+    if (data.id == undefined) {
+      this.api.simpan(data).subscribe(res => {
+        this.dialogRef.close(true)
+      })
+    } else {
+      this.api.ubah(data, data.id).subscribe(res => {
+        this.dialogRef.close(true)
+      })
+    }
   }
 
 }

@@ -17,4 +17,8 @@ export class ApiService {
     console.log(data)
     return this.http.post(this.apiUrl, data)
   }
+
+  ubah(data, id) {
+    return this.http.put(this.apiUrl + '/' + id, data)
+  }
 }
