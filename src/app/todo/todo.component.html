@@ -16,7 +16,7 @@
             <span>Deadline : {{item.jadwal_selesai}}</span>
           </p>
           <button class="btn-edit" mat-raised-button color="accent" (click)="editTodo(item)">Edit</button>
-          <button class="btn-selesai" mat-raised-button color="warn">Done</button>
+          <button class="btn-selesai" mat-raised-button color="warn" (click)="hapusTodo(item.id)">Done</button>
         </mat-list-item>
       </mat-list>
     </mat-card-content>

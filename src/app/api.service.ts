@@ -21,4 +21,8 @@ export class ApiService {
   ubah(data, id) {
     return this.http.put(this.apiUrl + '/' + id, data)
   }
+
+  hapus(id) {
+    return this.http.delete(this.apiUrl + '/' + id)
+  }
 }

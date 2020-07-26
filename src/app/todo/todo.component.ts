@@ -52,4 +52,12 @@ export class TodoComponent implements OnInit {
       this.getData // menampilkan data setelah diperbarui
     });
   }
+
+  //fungsi untuk menghapus data
+  hapusTodo(id) {
+    console.log('data dihapus')
+    this.api.hapus(id).subscribe(res => {
+      this.getData()
+    })
+  }
 }
