@@ -4,6 +4,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 //import halaman dialog yang sudah dibuat pada tahap sebelumnya
 import { TambahDataComponent } from '../tambah-data/tambah-data.component';
 
+// api service
+import { ApiService } from '../api.service';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -12,20 +15,29 @@ import { TambahDataComponent } from '../tambah-data/tambah-data.component';
 export class TodoComponent implements OnInit {
 
   constructor(
-    public dialog: MatDialog //menambahkan variabel dialog
-  ) { }
+    public dialog: MatDialog, //menambahkan variabel dialog
+    public api: ApiService
+  ) {
+    this.getData()
+  }
+
+  todo: any = []
+  getData() {
+    this.api.baca().subscribe(res => {
+      this.todo = res
+    })
+  }
 
   ngOnInit(): void {
   }
 
   //fungsi untuk menampilkan dialog penambahan alamat baru
-  buatAlamat() {
+  buatKegiatan() {
     const dialogRef = this.dialog.open(TambahDataComponent, {
       width: '450px',
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog ditutup');
+    dialogRef.afterClosed().subscribe(res => {
+      console.log('Dialog ditutup')
     });
   }
-
 }

@@ -5,7 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
+// koneksi http
+import { HttpClientModule } from '@angular/common/http';
 
 // angular material design
 import { MaterialDesign } from './material/material';
@@ -27,7 +30,9 @@ import { TambahDataComponent } from './tambah-data/tambah-data.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialDesign,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [
     TambahDataComponent

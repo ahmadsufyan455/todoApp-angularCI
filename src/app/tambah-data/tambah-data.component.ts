@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-tambah-data',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TambahDataComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public api: ApiService,
+    public dialogRef: MatDialogRef<TambahDataComponent>
+  ) { }
 
   ngOnInit(): void {
   }
