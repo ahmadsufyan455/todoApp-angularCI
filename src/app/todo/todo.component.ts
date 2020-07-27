@@ -38,7 +38,7 @@ export class TodoComponent implements OnInit {
       data: null
     });
     dialogRef.afterClosed().subscribe(res => {
-      this.getData // menampilkan data setelah diperbarui
+      this.getData() // menampilkan data setelah diperbarui
     });
   }
 
@@ -49,7 +49,7 @@ export class TodoComponent implements OnInit {
       data: data
     });
     dialogRef.afterClosed().subscribe(res => {
-      this.getData // menampilkan data setelah diperbarui
+      this.getData() // menampilkan data setelah diperbarui
     });
   }
 

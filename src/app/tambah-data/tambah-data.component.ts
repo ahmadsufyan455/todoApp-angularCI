@@ -23,16 +23,15 @@ export class TambahDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  insert(data: any) {
+  insert(data) {
     if (data.id == undefined) {
       this.api.simpan(data).subscribe(res => {
         this.dialogRef.close(true)
       })
     } else {
-      this.api.ubah(data, data.id).subscribe(res => {
+      this.api.ubah(data).subscribe(res => {
         this.dialogRef.close(true)
       })
     }
   }
-
 }
