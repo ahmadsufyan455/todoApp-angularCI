@@ -23,6 +23,6 @@ export class ApiService {
   }
 
   hapus(id) {
-    return this.http.delete(this.apiUrl + '/' + id)
+    return this.http.delete(this.apiUrl + '/delete/' + id)
   }
 }
